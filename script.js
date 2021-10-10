@@ -44,3 +44,69 @@ function generatePassword() {
         confirmNumber = confirm("Do you want to use a number?\n\nSelect OK for YES or Cancel for NO");
         confirmCharacter = confirm("Do you want to use special characters?\n\nSelect OK for YES or Cancel for NO");
     };
+    
+    // First if statement that uses user input prompts to determine choices
+    // Else if for 4 negative options
+    if (!confirmLowercase && !confirmUppercase && !confirmNumber && !confirmCharacter) {
+        choices = alert("You must select OK for at least one of the choices!");
+    }
+
+    // Else if for 4 positive options
+    else if (confirmLowercase && confirmUppercase && confirmNumber && confirmCharacter) {
+        choices = character.concat(alpha, alphaUpper, number, confirmCharacter);
+    }
+
+    // Else if for 3 positive options
+    else if (confirmUppercase && confirmNumber && confirmCharacter) {
+        choices = character.concat(alphaUpper, number);
+    }
+
+    else if (confirmLowercase && confirmNumber && confirmCharacter) {
+        choices = character.concat(alpha, number);
+    }
+
+    else if (confirmLowercase && confirmUppercase && confirmCharacter) {
+        choices = character.concat(alpha, alphaUpper);
+    }
+
+    else if (confirmLowercase && confirmUppercase && confirmNumber) {
+        choices = number.concat(alpha, alphaUpper);
+    }
+    
+    // Else if for 2 positive options 
+    else if (confirmLowercase && confirmUppercase) {
+        choices = alpha.concat(alpha);
+
+    }else if (confirmLowercase && confirmNumber) {
+        choices = alpha.concat(number);
+
+    }else if (confirmLowercase && confirmCharacter) {
+        choices = character.concat(alpha);
+
+    } else if (confirmUppercase && confirmNumber) {
+        choices = number.concat(alphaUpper);
+
+    } else if (confirmUppercase && confirmCharacter) {
+        choices = character.concat(alphaUpper);
+
+    } else if (confirmNumber && confirmCharacter) {
+        choices = character.concat(number);
+    } 
+
+    // Else if for 1 positive option        
+
+    else if (confirmLowercase) {
+        choices = alpha;
+    }
+    
+    else if (confirmUppercase) {
+        choices = alphaUpper;
+    }
+
+    else if (confirmNumber) {
+        choices = number;
+    }
+        
+    else if (confirmCharacter) {
+        choices = character;
+    }
