@@ -110,3 +110,24 @@ function generatePassword() {
     else if (confirmCharacter) {
         choices = character;
     }
+
+    // password variable is an array placeholder for user generated amount of length
+    var password = [];
+
+    // Start random selection variables:
+    // Random selection for all variables: 
+    for (var i = 0; i < enter; i++) {
+        var pickChoices = choices[Math.floor(Math.random() * choices.length)];
+        password.push(pickChoices);
+    }
+    // This joins the password array and converts it to a string
+    var ps = password.join("");
+    UserInput(ps);
+    return ps;
+}
+// This puts the password value into the textbox
+// Changed function input to use textcontent
+function UserInput(ps) {
+    document.getElementById("password").textContent = ps;
+
+}
