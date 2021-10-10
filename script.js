@@ -28,13 +28,9 @@ function generatePassword() {
     // Asks for input how many characters
     enter = parseInt(prompt("How many characters do you want in your password?\n\nEnter a number between 8 and 128\n"));
     // First if statement for user validation 
-    if (!enter) {
+    if (!enter || enter < 8 || enter > 128) {
         alert("You must enter an actual number between 8 and 128");
-    } else if (enter < 8 || enter > 128) {
-    // Validates user input
-
-        enter = parseInt(prompt("You must enter an actual number between 8 and 128"));
-
+        return generatePassword();
     } else {
     // Continues once user input is validated
     // Start user input prompts
