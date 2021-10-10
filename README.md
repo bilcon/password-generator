@@ -14,7 +14,9 @@
 
 # Below is the GitHub Pages published link and the GitHub Repository address:
 
+https://bilcon.github.io/password-generator/
 
+https://github.com/bilcon/password-generator
 
 # Here is a screen shot of the webpage when deployed
 
