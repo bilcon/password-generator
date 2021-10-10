@@ -45,8 +45,9 @@ function generatePassword() {
     // Else if for 4 negative options
     if (!confirmLowercase && !confirmUppercase && !confirmNumber && !confirmCharacter) {
         choices = alert("You must select OK for at least one of the choices!");
+        return generatePassword();
     }
-
+    
     // Else if for 4 positive options
     else if (confirmLowercase && confirmUppercase && confirmNumber && confirmCharacter) {
         choices = character.concat(alpha, alphaUpper, number, confirmCharacter);
